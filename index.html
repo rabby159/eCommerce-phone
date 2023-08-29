@@ -16,13 +16,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
-    </head>
-
+    
     <style>
-        .poppins{
-            font-family: 'Poppins', sans-serif;
-        }
+      .poppins{
+          font-family: 'Poppins', sans-serif;
+      }
     </style>
+</head>
+   
 <body class="poppins">
     <header class="bg-gradient-to-r from-cyan-200 from-10% via-teal-300 via-30% to-slate-200 to-90%">
         <!-- nav section start -->
@@ -75,16 +76,43 @@
 
         <!-- product section start  -->
         <section class="container mx-auto">
+          <div id="loading-spinner" class="text-center hidden">
+            <span class="loading loading-spinner loading-lg"></span>
+          </div>
           <div id="phone-container" class="mb-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mx-2">
            
           </div>
+          <div id="show-all-btn" class="card-actions flex justify-center mb-10 hidden">
+            <button onclick="handleShowAll()" class="btn btn-neutral text-[#fdfdfd] ">Show All</button>
+          </div>
         </section>
+        <!-- product section end  -->
+
+        <!-- modal section start  -->
+        <section>
+          <div>
+            <!-- Open the modal using ID.showModal() method -->
+              <dialog id="show_phone_details" class="modal modal-bottom sm:modal-middle">
+                <form method="dialog" class="modal-box">
+                  <div id="show-details-modal-info">
+                    
+
+                  </div>
+                  <div class="modal-action">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button class="btn btn-neutral">Close</button>
+                  </div>
+                </form>
+              </dialog>
+          </div>
+        </section>
+        <!-- modal section end  -->
     </main>
     <footer class="bg-slate-200">
         <div class="footer px-10 py-4 border-t text-base-content border-base-300 container mx-auto">
             <div class="items-center grid-flow-col">
                 <img width="20" height="24" viewBox="0 0 24 24"  src="./images/mobile-retro-solid.svg" alt="">
-                <p>AWJ Gadget <br/>Providing reliable tech since 1992</p>
+                <p>AWJ Gadget <br/>Providing reliable tech since 1992 <br/><small>&copy;All rights reserve</small></p>
               </div> 
               <div class="md:place-self-center md:justify-self-end">
                 <div class="grid grid-flow-col gap-4">
@@ -129,8 +157,6 @@
         </div>
       </footer> 
       
-
-
     <script src="./js/api-call.js"></script>
 </body>
 </html>
